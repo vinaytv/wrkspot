@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: NEVER
+    whitelabel:
+      enabled: false
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topic: NEW_CUSTOMER
+    host: localhost
+    port: 9092
+  application:
+    name: customer-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/assessment
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    hikari.auto-commit: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
