@@ -1,8 +1,8 @@
-package com.wrkspot.assessment.modules.customer.util;
+package com.wrkspot.assessment.util;
 
-import com.wrkspot.assessment.modules.customer.adapter.data.Address;
-import com.wrkspot.assessment.modules.customer.adapter.data.CustomerEntity;
-import com.wrkspot.assessment.modules.customer.domain.data.CustomerFilters;
+import com.wrkspot.assessment.entities.Address;
+import com.wrkspot.assessment.entities.CustomerEntity;
+import com.wrkspot.assessment.model.CustomerFilters;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
@@ -27,8 +27,8 @@ public class CustomerSpecificationUtils {
                 predicates.add(criteriaBuilder.equal(customer.get("city"), customerFilters.getCity()));
             }
 
-            if (null != customerFilters.getName()) {
-                predicates.add(criteriaBuilder.equal(root.get("name"), customerFilters.getName()));
+            if (null != customerFilters.getFirstName()) {
+                predicates.add(criteriaBuilder.equal(root.get("firstName"), customerFilters.getFirstName()));
             }
 
 
