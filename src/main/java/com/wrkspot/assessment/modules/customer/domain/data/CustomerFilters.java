@@ -1,4 +1,4 @@
-package com.wrkspot.assessment.modules.customer.domain.data;
+package com.wrkspot.assessment.model;
 
 import lombok.Data;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class CustomerFilters {
 
-    private String name;
+    private String firstName;
 
     private String city;
 
